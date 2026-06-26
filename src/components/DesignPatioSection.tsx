@@ -266,7 +266,7 @@ export default function DesignPatioSection() {
           </div>
 
           {/* Panel Derecho: Flujo Wizard */}
-          <div className="w-full md:w-2/3 p-6 md:p-10 min-h-[500px] flex flex-col relative bg-white/5">
+          <div className="w-full md:w-2/3 p-4 md:p-10 min-h-[500px] flex flex-col relative bg-white/5">
             
             {status === 'success' ? (
               <div className="flex-1 flex flex-col items-center justify-center text-center">
@@ -308,7 +308,7 @@ export default function DesignPatioSection() {
                       </div>
                       <p className="text-white/80 mb-6 text-sm font-medium">Selecciona la opción que mejor describa tu requerimiento.</p>
                       
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
                         {PROJECT_TYPES.map(type => {
                           const Icon = type.icon;
                           return (
@@ -340,7 +340,7 @@ export default function DesignPatioSection() {
                       </div>
                       <p className="text-white/80 mb-6 text-sm font-medium">Contamos con +10 modelos de fibra de vidrio de alta calidad.</p>
                       
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 overflow-y-auto max-h-[350px] pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3 overflow-y-auto max-h-[350px] pr-1 md:pr-2 custom-scrollbar">
                         {POOL_MODELS.map(model => (
                           <div 
                             key={model.id}
@@ -480,14 +480,14 @@ export default function DesignPatioSection() {
                           {/* CALENDARIO - CINTA HORIZONTAL */}
                           <div className="mb-6 animate-in fade-in slide-in-from-left-2 duration-300">
                             <label className="block text-sm font-bold text-white mb-3">1. Selecciona el Día</label>
-                            <div className="flex gap-2 overflow-x-auto pb-2 custom-scrollbar snap-x">
+                            <div className="flex gap-3 overflow-x-auto pb-3 custom-scrollbar snap-x snap-mandatory px-1">
                               {availableDays.map(day => (
                                 <div 
                                   key={day.id}
                                   onClick={() => {
                                     setFormData(prev => ({ ...prev, visitDate: day.id, visitTime: (day.isSaturday && prev.visitTime === 'tarde') ? '' : prev.visitTime }));
                                   }}
-                                  className={`snap-center flex-shrink-0 cursor-pointer w-[72px] h-24 rounded-2xl border-2 flex flex-col items-center justify-center gap-1 transition-all ${
+                                  className={`snap-center flex-shrink-0 cursor-pointer w-20 h-24 md:h-28 rounded-2xl border-2 flex flex-col items-center justify-center gap-1 transition-all ${
                                     formData.visitDate === day.id 
                                       ? 'border-cyan-400 bg-cyan-900/50 shadow-[0_0_15px_rgba(34,211,238,0.4)]' 
                                       : 'border-white/20 bg-black/20 hover:border-white/50 hover:bg-black/40'

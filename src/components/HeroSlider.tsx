@@ -139,7 +139,7 @@ export default function HeroSlider() {
         >
           <Link 
             href="#modelos"
-            className="group bg-brand-light hover:bg-white text-brand-dark font-black px-12 py-4 rounded-full shadow-[0_0_20px_rgba(56,189,248,0.5)] hover:shadow-[0_0_40px_rgba(56,189,248,0.8)] transition-all duration-300 hover:scale-105 flex items-center gap-3 text-lg md:text-xl"
+            className="group bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 flex items-center gap-3 text-base md:text-lg tracking-wide"
           >
             Ver Modelos
             <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

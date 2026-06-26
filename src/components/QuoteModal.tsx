@@ -118,7 +118,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
   const isStep3Valid = !!formData.name && !!formData.phone && !!formData.email && (contactIntent === 'cotizar' || (!!formData.visitDate && !!formData.visitTime));
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-6">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-brand-dark/60 backdrop-blur-md transition-opacity"
@@ -126,7 +126,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
       ></div>
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-5xl h-[90vh] max-h-[800px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row transform transition-all">
+      <div className="relative w-full h-[100dvh] sm:h-[90vh] max-h-[100dvh] sm:max-h-[800px] max-w-5xl bg-white rounded-none sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row transform transition-all">
         
         {/* Botón Cerrar Global */}
         <button 
@@ -137,7 +137,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
         </button>
 
         {/* Panel Izquierdo: Resumen del Modelo (Fijo en desktop, Oculto en móviles si está en pasos 2/3) */}
-        <div className={`md:w-5/12 relative bg-brand-gray-900 ${step > 1 ? 'hidden md:block' : 'block h-2/5 md:h-full'}`}>
+        <div className={`md:w-5/12 relative bg-brand-gray-900 ${step > 1 ? 'hidden md:block' : 'block h-[25vh] md:h-full'}`}>
           <div className="absolute inset-0">
             <Image 
               src={model.image}
@@ -147,8 +147,8 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-gray-900 via-brand-gray-900/40 to-transparent"></div>
           </div>
-          <div className="absolute inset-0 p-8 flex flex-col justify-end">
-            <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest mb-2">Tu Configuración</span>
+          <div className="absolute inset-0 p-5 md:p-8 flex flex-col justify-end">
+            <span className="text-cyan-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2">Tu Configuración</span>
             <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-1">{cleanName}</h2>
             {sizeSuffix && <p className="text-cyan-400 font-bold mb-6 text-lg">Modelo {sizeSuffix}</p>}
             
@@ -195,7 +195,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
         </div>
 
         {/* Panel Derecho: Flujo (Wizard) */}
-        <div className="md:w-7/12 flex flex-col h-3/5 md:h-full bg-white relative overflow-y-auto">
+        <div className="md:w-7/12 flex flex-col flex-1 h-[75vh] md:h-full bg-white relative overflow-y-auto">
           
           {status === 'success' ? (
             <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-16 text-center">
