@@ -57,13 +57,12 @@ export default function HeroSlider() {
           key={currentIndex}
           initial={{ opacity: 0, zIndex: 10 }}
           animate={{ opacity: 1, zIndex: 10 }}
-          exit={{ opacity: 1, zIndex: 0 }}
+          exit={{ opacity: 0.99, zIndex: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
           <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.15 }}
+            animate={{ scale: [1, 1.15] }}
             transition={{ duration: 15, ease: "easeOut" }}
             className="relative w-full h-full"
           >
