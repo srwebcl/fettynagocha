@@ -50,7 +50,7 @@ export default function HeroSlider() {
   const boldText = "Piscinas de Fibra de Vidrio".split(" ");
 
   return (
-    <section id="inicio" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
+    <section id="inicio" className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
       {/* Carrusel de Imágenes con Efecto Ken Burns en CSS puro para evitar fallos de React/FramerMotion */}
       {HERO_IMAGES.map((src, index) => {
         const isActive = index === currentIndex;
