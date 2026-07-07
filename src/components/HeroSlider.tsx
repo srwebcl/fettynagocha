@@ -61,11 +61,7 @@ export default function HeroSlider() {
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <motion.div
-            animate={{ scale: [1, 1.15] }}
-            transition={{ duration: 15, ease: "easeOut" }}
-            className="relative w-full h-full"
-          >
+          <div className="relative w-full h-full animate-kenburns origin-center">
             <Image
               src={HERO_IMAGES[currentIndex]}
               alt="Piscina de Fibra de Vidrio Fettyna Gocha"
@@ -76,7 +72,7 @@ export default function HeroSlider() {
               sizes="100vw"
               className="object-cover"
             />
-          </motion.div>
+          </div>
         </motion.div>
       </AnimatePresence>
 
