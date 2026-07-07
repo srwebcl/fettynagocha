@@ -60,7 +60,7 @@ export default function DesignPatioSection() {
   };
 
   return (
-    <section id="cotizar" className="py-32 relative overflow-hidden flex flex-col items-center">
+    <section id="cotizar" className="py-16 md:py-32 relative overflow-hidden flex flex-col items-center">
       {/* Fondo inmersivo oscuro y elegante */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-950 via-brand-dark to-black z-0"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.15)_0%,transparent_70%)] z-0 pointer-events-none"></div>
@@ -69,7 +69,7 @@ export default function DesignPatioSection() {
         
         {/* Cabecera de la Sección */}
         <div className="mb-12 text-center">
-          <div className="flex justify-center items-center gap-4 mb-2">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-2">
             <AnimatedEmoji symbol="💬" delay={0} className="text-3xl" />
             <CinematicTitle 
               lightText="Hablemos de tu" 
@@ -88,7 +88,7 @@ export default function DesignPatioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="w-full bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden p-6 md:p-10"
+          className="w-full bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden p-5 sm:p-6 md:p-10"
         >
           {status === 'success' ? (
             <div className="flex flex-col items-center justify-center text-center py-10">

@@ -31,7 +31,7 @@ export default function WhatsAppButton({ modelName }: WhatsAppButtonProps) {
   if (!WHATSAPP_NUMBER) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center justify-center">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center justify-center">
       {/* Animación de pulso/ripple detrás del botón para llamar la atención */}
       <div className="absolute inset-0 bg-[#25D366] rounded-full animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite] opacity-60"></div>
       
@@ -44,8 +44,8 @@ export default function WhatsAppButton({ modelName }: WhatsAppButtonProps) {
       >
         <WhatsAppIcon className="w-9 h-9" />
         
-        {/* Tooltip on hover */}
-        <span className="absolute right-full mr-4 bg-white text-brand-gray-900 text-[15px] font-bold px-5 py-3 rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap transform translate-x-2 group-hover:translate-x-0 border border-gray-100">
+        {/* Tooltip on hover (hidden on mobile to prevent touch bugs) */}
+        <span className="hidden md:block absolute right-full mr-4 bg-white text-brand-gray-900 text-[15px] font-bold px-5 py-3 rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap transform translate-x-2 group-hover:translate-x-0 border border-gray-100">
           ¡Cotiza tu proyecto! 👋
         </span>
       </a>

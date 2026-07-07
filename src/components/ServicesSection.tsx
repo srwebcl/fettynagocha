@@ -68,7 +68,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="servicios" className="py-32 relative overflow-hidden flex flex-col items-center">
+    <section id="servicios" className="py-16 md:py-32 relative overflow-hidden flex flex-col items-center">
       {/* Fondo Acuático Cinematográfico Animado */}
       <div className="absolute inset-0 bg-[#001a33] z-0"></div>
       <video
@@ -93,7 +93,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, type: "spring", stiffness: 40 }}
           className="mb-16 text-center max-w-3xl mx-auto"
         >
-          <div className="flex justify-center items-center gap-4 mb-2">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-2">
             <AnimatedEmoji symbol="🏄‍♂️" delay={0} className="text-3xl" />
             <CinematicTitle lightText="Servicios" boldText="Integrales" theme="dark" />
             <AnimatedEmoji symbol="💦" delay={0} className="text-3xl" />

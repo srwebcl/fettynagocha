@@ -22,7 +22,7 @@ export default function CatalogSection() {
 
   return (
     <>
-      <section id="modelos" className="py-32 relative overflow-hidden">
+      <section id="modelos" className="py-16 md:py-32 relative overflow-hidden">
         {/* Fondo Claro Abstracto */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-sky-50 to-cyan-100 z-0"></div>
 
@@ -31,7 +31,7 @@ export default function CatalogSection() {
 
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mb-24 text-center">
-            <div className="flex justify-center items-center gap-4 mb-2">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-2">
               <AnimatedEmoji symbol="☀️" delay={0} className="text-3xl" />
               <CinematicTitle lightText="Modelos" boldText="Disponibles" theme="light" />
               <AnimatedEmoji symbol="🏊‍♂️" delay={0} className="text-3xl" />

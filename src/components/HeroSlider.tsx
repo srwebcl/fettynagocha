@@ -51,30 +51,31 @@ export default function HeroSlider() {
 
   return (
     <section id="inicio" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
-      {/* Carrusel de Imágenes con Efecto Ken Burns */}
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, zIndex: 10 }}
-          animate={{ opacity: 1, zIndex: 10 }}
-          exit={{ opacity: 0.99, zIndex: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <div className="relative w-full h-full animate-kenburns origin-center">
-            <Image
-              src={HERO_IMAGES[currentIndex]}
-              alt="Piscina de Fibra de Vidrio Fettyna Gocha"
-              fill
-              priority
-              fetchPriority="high"
-              quality={75}
-              sizes="100vw"
-              className="object-cover"
-            />
+      {/* Carrusel de Imágenes con Efecto Ken Burns en CSS puro para evitar fallos de React/FramerMotion */}
+      {HERO_IMAGES.map((src, index) => {
+        const isActive = index === currentIndex;
+        return (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+              isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 delay-[1500ms]'
+            }`}
+          >
+            <div className={`relative w-full h-full origin-center ${isActive ? 'animate-kenburns' : ''}`}>
+              <Image
+                src={src}
+                alt="Piscina de Fibra de Vidrio Fettyna Gocha"
+                fill
+                priority={index === 0}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                quality={75}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        );
+      })}
 
       {/* Overlay oscuro garantizado para contraste */}
       <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
@@ -91,7 +92,7 @@ export default function HeroSlider() {
         </motion.div>
         
         <motion.h1 
-          className="text-5xl md:text-7xl tracking-tighter max-w-5xl mx-auto mb-8 flex flex-col items-center gap-y-2 [perspective:1000px]"
+          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:tracking-tighter max-w-5xl mx-auto mb-8 flex flex-col items-center gap-y-2 [perspective:none] md:[perspective:1000px]"
           variants={container}
           initial="hidden"
           animate="visible"
@@ -136,7 +137,7 @@ export default function HeroSlider() {
         >
           <Link 
             href="#modelos"
-            className="group bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 flex items-center gap-3 text-base md:text-lg tracking-wide"
+            className="group bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white font-medium px-8 py-3 md:px-12 md:py-4 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 flex items-center gap-3 text-sm sm:text-base md:text-lg tracking-wide"
           >
             Ver Modelos
             <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

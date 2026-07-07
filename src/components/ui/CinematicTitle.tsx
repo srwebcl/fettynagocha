@@ -63,7 +63,7 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
 
   return (
     <motion.h2 
-      className={`text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6 flex flex-wrap gap-x-[0.3em] gap-y-2 [perspective:1000px] ${alignClass} ${className}`}
+      className={`text-[32px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter mb-4 md:mb-6 flex flex-wrap gap-x-[0.3em] gap-y-1 md:gap-y-2 [perspective:none] md:[perspective:1000px] ${alignClass} ${className}`}
       variants={container}
       initial="hidden"
       whileInView="visible"
