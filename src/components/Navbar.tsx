@@ -36,7 +36,7 @@ export default function Navbar() {
             {/* Logo oficial */}
             <div className="flex-shrink-0 flex items-center z-50">
               <Link href="#inicio" onClick={() => setIsOpen(false)} aria-label="Inicio" className="drop-shadow-lg">
-                <Logo variant="dark" priority={true} className={`${isScrolled ? 'h-10 md:h-12' : 'h-16 md:h-20'} hover:scale-105`} />
+                <Logo variant="dark" priority={true} className={`h-16 md:h-20 origin-left transition-transform duration-500 hover:scale-[1.02] ${isScrolled ? 'scale-75' : 'scale-100'}`} />
               </Link>
             </div>
 

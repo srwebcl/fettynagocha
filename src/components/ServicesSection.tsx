@@ -21,7 +21,7 @@ const SERVICES = [
   {
     title: 'Revestimiento Fulget',
     description: 'Terminaciones de lujo antideslizantes para el borde perimetral de tu piscina.',
-    image: '/images/acabado-fulget de tamaño grande.jpeg',
+    image: '/images/revestimiento_fulget.jpeg',
   },
   {
     title: 'Bombas y Accesorios',

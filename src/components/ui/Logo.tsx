@@ -21,6 +21,7 @@ export default function Logo({ variant = 'dark', className = '', priority = fals
       height={80}
       priority={priority}
       className={`w-auto object-contain transition-all duration-500 ${className}`}
+      style={{ width: 'auto', height: 'auto' }}
     />
   );
 }
