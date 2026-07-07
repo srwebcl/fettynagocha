@@ -77,6 +77,7 @@ export default function ServicesSection() {
         loop
         muted
         playsInline
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay z-0"
       >
         <source src="/images/background-piscinas.mp4" type="video/mp4" />
@@ -139,7 +140,9 @@ export default function ServicesSection() {
                 src={service.image} 
                 alt={service.title} 
                 fill 
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={70}
+                loading="lazy"
+                sizes="(max-width: 768px) 340px, 480px"
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
               />
               

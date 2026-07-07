@@ -64,6 +64,8 @@ export default function CatalogSection() {
                         src={model.image} 
                         alt={`Piscina modelo ${model.name}`}
                         fill
+                        quality={70}
+                        loading="lazy"
                         className="object-cover transition-transform duration-[10000ms] ease-out scale-105 group-hover:scale-125"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />

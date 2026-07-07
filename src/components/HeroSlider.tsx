@@ -5,16 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_IMAGES = [
-  '/images/models/piscina-rectangular-600.jpeg',
-  '/images/models/piscina-redonda-150.jpeg',
-  '/images/models/piscina-redonda-220.jpeg',
-  '/images/models/piscina-rinon-280.jpg',
-  '/images/models/piscina-rinon-420.jpeg',
-  '/images/models/piscina-rectagular-700.jpeg',
-  '/images/models/jacuzzi-220.jpeg',
+  '/images/hero/Couple_relaxing_on_pool_steps_202607041912 (1).jpeg',
+  '/images/hero/Family_splashing_in_swimming_pool_202607041911.jpeg',
+  '/images/hero/White_pool_model_luxury_resort_202607042005.jpeg',
 ];
 
 export default function HeroSlider() {
@@ -56,28 +52,34 @@ export default function HeroSlider() {
   return (
     <section id="inicio" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
       {/* Carrusel de Imágenes con Efecto Ken Burns */}
-      {HERO_IMAGES.map((src, index) => {
-        const isActive = index === currentIndex;
-        return (
-          <div
-            key={src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 ${
-              isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.15 }}
+            transition={{ duration: 15, ease: "easeOut" }}
+            className="w-full h-full"
           >
             <Image
-              src={src}
+              src={HERO_IMAGES[currentIndex]}
               alt="Piscina de Fibra de Vidrio Fettyna Gocha"
               fill
-              priority={index === 0}
-              sizes="(max-width: 768px) 100vw, 100vw"
-              className={`object-cover transform transition-transform duration-[10000ms] ease-out ${
-                isActive ? 'scale-110' : 'scale-100'
-              }`}
+              priority
+              fetchPriority="high"
+              quality={75}
+              sizes="100vw"
+              className="object-cover"
             />
-          </div>
-        );
-      })}
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Overlay oscuro garantizado para contraste */}
       <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
