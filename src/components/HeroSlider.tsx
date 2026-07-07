@@ -8,9 +8,9 @@ import { ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_IMAGES = [
-  '/images/hero/Couple_relaxing_on_pool_steps_202607041912 (1).jpeg',
   '/images/hero/Family_splashing_in_swimming_pool_202607041911.jpeg',
   '/images/hero/White_pool_model_luxury_resort_202607042005.jpeg',
+  '/images/hero/Couple_relaxing_on_pool_steps_202607041912 (1).jpeg',
 ];
 
 export default function HeroSlider() {
@@ -55,17 +55,17 @@ export default function HeroSlider() {
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, zIndex: 10 }}
+          animate={{ opacity: 1, zIndex: 10 }}
+          exit={{ opacity: 1, zIndex: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0"
         >
           <motion.div
             initial={{ scale: 1 }}
             animate={{ scale: 1.15 }}
             transition={{ duration: 15, ease: "easeOut" }}
-            className="w-full h-full"
+            className="relative w-full h-full"
           >
             <Image
               src={HERO_IMAGES[currentIndex]}

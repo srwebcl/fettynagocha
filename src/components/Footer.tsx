@@ -72,7 +72,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Piscinas Fettyna Gocha. Todos los derechos reservados.
           </div>
           <div>
-            <span className="font-medium tracking-wide">Sitio desarrollado por <strong className="text-cyan-400 font-bold">SRweb</strong></span>
+            <span className="font-medium tracking-wide">
+              Sitio desarrollado por <a href="https://www.srweb.cl" target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors cursor-pointer">SRweb</a>
+            </span>
           </div>
         </div>
       </div>
