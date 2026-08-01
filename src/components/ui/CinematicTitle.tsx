@@ -30,9 +30,6 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
     }
   };
 
-  const lightWords = lightText.split(' ');
-  const boldWords = boldText.split(' ');
-
   const isDark = theme === 'dark';
   
   // Clases dependientes del tema para contraste cinemático real
@@ -45,31 +42,20 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
 
   return (
     <motion.h2 
-      className={`text-[32px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter mb-4 md:mb-6 flex flex-wrap gap-x-[0.3em] gap-y-1 md:gap-y-2 ${alignClass} ${className}`}
+      className={`text-[32px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter mb-4 md:mb-6 ${alignClass} ${className}`}
       variants={container}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
       {/* Texto Fino (Estructura) */}
-      <span className={`font-light flex flex-wrap gap-x-[0.3em] ${lightTextClass}`}>
-        {lightWords.map((word, i) => (
-          <span key={`light-${i}`} className="inline-block">
-            {word}
-          </span>
-        ))}
+      <span className={`font-light mr-[0.3em] ${lightTextClass}`}>
+        {lightText}
       </span>
       
       {/* Texto Ultra-grueso + Degradado */}
-      <span className="flex flex-wrap gap-x-[0.3em]">
-        {boldWords.map((word, i) => (
-          <span 
-            key={`bold-${i}`} 
-            className={`inline-block font-black bg-gradient-to-br bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] ${gradientClass}`} 
-          >
-            {word}
-          </span>
-        ))}
+      <span className={`font-black bg-gradient-to-br bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] ${gradientClass}`}>
+        {boldText}
       </span>
     </motion.h2>
   );

@@ -33,8 +33,8 @@ export default function HeroSlider() {
     }
   };
 
-  const lightText = "Fabricamos e instalamos".split(" ");
-  const boldText = "Piscinas de Fibra de Vidrio".split(" ");
+  const lightText = "Fabricamos e instalamos";
+  const boldText = "Piscinas de Fibra de Vidrio";
 
   return (
     <section id="inicio" className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-dark">
@@ -87,24 +87,13 @@ export default function HeroSlider() {
           animate="visible"
         >
           {/* Parte fina */}
-          <span className="font-light text-white flex flex-wrap justify-center gap-x-[0.3em]">
-            {lightText.map((word, i) => (
-              <span key={`light-${i}`} className="inline-block">
-                {word}
-              </span>
-            ))}
+          <span className="font-light text-white mr-[0.3em]">
+            {lightText}
           </span>
           
           {/* Parte gruesa */}
-          <span className="flex flex-wrap justify-center gap-x-[0.3em]">
-            {boldText.map((word, i) => (
-              <span 
-                key={`bold-${i}`} 
-                className="inline-block font-black bg-gradient-to-r from-sky-200 via-cyan-200 to-teal-200 bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] drop-shadow-md" 
-              >
-                {word}
-              </span>
-            ))}
+          <span className="font-black bg-gradient-to-r from-sky-200 via-cyan-200 to-teal-200 bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] drop-shadow-md">
+            {boldText}
           </span>
         </motion.h1>
 

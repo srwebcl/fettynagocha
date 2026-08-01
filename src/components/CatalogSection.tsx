@@ -85,12 +85,12 @@ export default function CatalogSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 60 }}
-                  className={`group relative w-full [perspective:2000px] cursor-pointer transition-all duration-500 ${
+                  className={`group relative w-full cursor-pointer transition-[height] duration-500 ${
                     viewMode === 'compact' ? 'h-[380px] md:h-[520px]' : 'h-[520px] md:h-[520px]'
                   }`}
                   onClick={() => openQuoteModal(model.id)}
                 >
-                  <div className={`relative w-full h-full transition-transform duration-[1000ms] ease-out [transform-style:preserve-3d] group-hover:[transform:rotateX(6deg)_rotateY(-6deg)_scale(1.05)] overflow-hidden bg-black ${
+                  <div className={`relative w-full h-full transition-transform duration-[1000ms] ease-out group-hover:scale-[1.02] overflow-hidden ${
                     viewMode === 'compact' 
                       ? 'rounded-2xl md:rounded-3xl shadow-[0_15px_30px_rgba(2,132,199,0.2)] md:shadow-[0_20px_40px_rgba(2,132,199,0.2)] group-hover:shadow-[0_40px_80px_rgba(2,132,199,0.5)]' 
                       : 'rounded-3xl shadow-[0_20px_40px_rgba(2,132,199,0.2)] group-hover:shadow-[0_40px_80px_rgba(2,132,199,0.5)]'
@@ -110,7 +110,7 @@ export default function CatalogSection() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-[#011e38]/95 via-[#011e38]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"></div>
 
-                    <div className={`absolute inset-0 flex flex-col justify-end [transform:translateZ(80px)] pointer-events-none ${
+                    <div className={`absolute inset-0 flex flex-col justify-end pointer-events-none ${
                       viewMode === 'compact' ? 'p-4 md:p-6' : 'p-6 md:p-8'
                     }`}>
                       
