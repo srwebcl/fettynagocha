@@ -36,13 +36,11 @@ export default function HeroSlider() {
   };
 
   const child = {
-    hidden: { opacity: 0, y: 50, rotateX: -80, filter: 'blur(12px)' },
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      rotateX: 0, 
-      filter: 'blur(0px)',
-      transition: { type: 'spring' as const, damping: 18, stiffness: 90 }
+      transition: { type: 'spring' as const, damping: 20, stiffness: 100 }
     }
   };
 
@@ -94,7 +92,7 @@ export default function HeroSlider() {
         </div>
         
         <motion.h1 
-          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:tracking-tighter max-w-5xl mx-auto mb-8 flex flex-col items-center gap-y-2 [perspective:none] md:[perspective:1000px]"
+          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:tracking-tighter max-w-5xl mx-auto mb-8 flex flex-col items-center gap-y-2"
           variants={container}
           initial="hidden"
           animate="visible"
@@ -102,7 +100,7 @@ export default function HeroSlider() {
           {/* Parte fina */}
           <span className="font-light text-white flex flex-wrap justify-center gap-x-[0.3em]">
             {lightText.map((word, i) => (
-              <motion.span key={`light-${i}`} className="inline-block" variants={child} style={{ transformOrigin: 'bottom center', transformStyle: 'preserve-3d' }}>
+              <motion.span key={`light-${i}`} className="inline-block" variants={child}>
                 {word}
               </motion.span>
             ))}
@@ -115,7 +113,6 @@ export default function HeroSlider() {
                 key={`bold-${i}`} 
                 className="inline-block font-black bg-gradient-to-r from-sky-200 via-cyan-200 to-teal-200 bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] drop-shadow-md" 
                 variants={child} 
-                style={{ transformOrigin: 'bottom center', transformStyle: 'preserve-3d' }}
               >
                 {word}
               </motion.span>

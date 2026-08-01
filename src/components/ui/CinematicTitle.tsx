@@ -31,19 +31,15 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
   const child: Variants = {
     hidden: {
       opacity: 0,
-      y: 50,
-      rotateX: -80,
-      filter: 'blur(12px)'
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
-      rotateX: 0,
-      filter: 'blur(0px)',
       transition: {
         type: 'spring',
-        damping: 18,
-        stiffness: 90
+        damping: 20,
+        stiffness: 100
       }
     }
   };
@@ -63,7 +59,7 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
 
   return (
     <motion.h2 
-      className={`text-[32px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter mb-4 md:mb-6 flex flex-wrap gap-x-[0.3em] gap-y-1 md:gap-y-2 [perspective:none] md:[perspective:1000px] ${alignClass} ${className}`}
+      className={`text-[32px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter mb-4 md:mb-6 flex flex-wrap gap-x-[0.3em] gap-y-1 md:gap-y-2 ${alignClass} ${className}`}
       variants={container}
       initial="hidden"
       whileInView="visible"
@@ -76,7 +72,6 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
             key={`light-${i}`} 
             className="inline-block" 
             variants={child} 
-            style={{ transformOrigin: 'bottom center', transformStyle: 'preserve-3d' }}
           >
             {word}
           </motion.span>
@@ -90,7 +85,6 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
             key={`bold-${i}`} 
             className={`inline-block font-black bg-gradient-to-br bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] ${gradientClass}`} 
             variants={child} 
-            style={{ transformOrigin: 'bottom center', transformStyle: 'preserve-3d' }}
           >
             {word}
           </motion.span>

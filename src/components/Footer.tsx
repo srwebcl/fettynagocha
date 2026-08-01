@@ -21,7 +21,7 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-gray-900 border-t border-brand-gray-800 text-white pt-16 pb-8">
+    <footer className="bg-brand-gray-900 border-t border-brand-gray-800 text-white pt-16 pb-24 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           

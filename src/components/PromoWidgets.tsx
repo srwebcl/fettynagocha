@@ -35,7 +35,7 @@ export default function PromoWidgets() {
     <>
       {/* 1. TOAST (Notificación Inferior Izquierda) */}
       <div 
-        className={`fixed bottom-24 left-4 md:bottom-28 md:left-6 z-[90] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+        className={`fixed bottom-[130px] left-4 md:bottom-28 md:left-6 z-[90] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
           showToast ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
         }`}
       >

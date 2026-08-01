@@ -120,7 +120,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
   const isStep3Valid = !!formData.name && !!formData.phone && !!formData.email && (contactIntent === 'cotizar' || (!!formData.visitDate && !!formData.visitTime));
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-6">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-0 sm:p-6">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-brand-dark/60 backdrop-blur-md transition-opacity"
@@ -133,7 +133,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
         {/* Botón Cerrar Global */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 md:top-6 md:right-6 z-[60] p-2 bg-white/80 backdrop-blur-md shadow-md text-brand-dark rounded-full hover:bg-brand-gray-100 transition-colors"
+          className="absolute top-4 right-4 md:top-6 md:right-6 z-[130] p-2 bg-white/80 backdrop-blur-md shadow-md text-brand-dark rounded-full hover:bg-brand-gray-100 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
