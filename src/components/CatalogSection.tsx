@@ -31,18 +31,18 @@ export default function CatalogSection() {
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-white/60 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-24 text-center">
+          <div className="mb-8 md:mb-16 text-center">
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-2">
               <AnimatedEmoji symbol="☀️" delay={0} className="text-3xl" />
               <CinematicTitle lightText="Modelos" boldText="Disponibles" theme="light" />
               <AnimatedEmoji symbol="🏊‍♂️" delay={0} className="text-3xl" />
             </div>
-            <p className="text-xl text-brand-gray-600 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm flex items-center justify-center gap-2 mb-8">
+            <p className="text-lg md:text-xl text-brand-gray-600 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm flex items-center justify-center gap-2 mb-6 md:mb-8">
               Explora nuestra línea de cascos de fibra de vidrio. Encuentra la forma y el tamaño ideal para tu patio.
             </p>
 
             {/* View Switcher (Solo Móvil) */}
-            <div className="flex md:hidden justify-center mb-8">
+            <div className="flex md:hidden justify-center mb-4">
               <div className="bg-white/80 backdrop-blur-sm p-1.5 rounded-full shadow-sm border border-brand-gray-100 flex gap-1">
                 <button
                   onClick={() => setViewMode('compact')}

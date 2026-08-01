@@ -23,24 +23,13 @@ export default function HeroSlider() {
     return () => clearInterval(interval);
   }, []);
 
-  // Configuraciones de Animación 3D para el Hero
+  // Animación unificada del título para máxima fluidez
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const child = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { type: 'spring' as const, damping: 20, stiffness: 100 }
+      y: 0,
+      transition: { type: 'spring' as const, damping: 20, stiffness: 100, duration: 0.6 }
     }
   };
 
@@ -100,22 +89,21 @@ export default function HeroSlider() {
           {/* Parte fina */}
           <span className="font-light text-white flex flex-wrap justify-center gap-x-[0.3em]">
             {lightText.map((word, i) => (
-              <motion.span key={`light-${i}`} className="inline-block" variants={child}>
+              <span key={`light-${i}`} className="inline-block">
                 {word}
-              </motion.span>
+              </span>
             ))}
           </span>
           
           {/* Parte gruesa */}
           <span className="flex flex-wrap justify-center gap-x-[0.3em]">
             {boldText.map((word, i) => (
-              <motion.span 
+              <span 
                 key={`bold-${i}`} 
                 className="inline-block font-black bg-gradient-to-r from-sky-200 via-cyan-200 to-teal-200 bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] drop-shadow-md" 
-                variants={child} 
               >
                 {word}
-              </motion.span>
+              </span>
             ))}
           </span>
         </motion.h1>

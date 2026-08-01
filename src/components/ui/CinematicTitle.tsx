@@ -15,31 +15,17 @@ interface CinematicTitleProps {
 export default function CinematicTitle({ lightText, boldText, className = '', align = 'center', theme = 'dark', customGradient }: CinematicTitleProps) {
   const alignClass = align === 'left' ? 'justify-start' : align === 'right' ? 'justify-end' : 'justify-center';
 
-  // Contenedor principal coordina el efecto dominó (stagger)
+  // Animación simple de todo el bloque para máxima fluidez
   const container: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  // Efecto 3D de entrada desde abajo y desenfoque
-  const child: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-    },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         type: 'spring',
         damping: 20,
-        stiffness: 100
+        stiffness: 100,
+        duration: 0.6
       }
     }
   };
@@ -68,26 +54,21 @@ export default function CinematicTitle({ lightText, boldText, className = '', al
       {/* Texto Fino (Estructura) */}
       <span className={`font-light flex flex-wrap gap-x-[0.3em] ${lightTextClass}`}>
         {lightWords.map((word, i) => (
-          <motion.span 
-            key={`light-${i}`} 
-            className="inline-block" 
-            variants={child} 
-          >
+          <span key={`light-${i}`} className="inline-block">
             {word}
-          </motion.span>
+          </span>
         ))}
       </span>
       
       {/* Texto Ultra-grueso + Degradado */}
       <span className="flex flex-wrap gap-x-[0.3em]">
         {boldWords.map((word, i) => (
-          <motion.span 
+          <span 
             key={`bold-${i}`} 
             className={`inline-block font-black bg-gradient-to-br bg-clip-text text-transparent pb-[0.1em] pr-[0.1em] ${gradientClass}`} 
-            variants={child} 
           >
             {word}
-          </motion.span>
+          </span>
         ))}
       </span>
     </motion.h2>
