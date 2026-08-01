@@ -39,6 +39,7 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
     message: '',
     visitDate: '',
     visitTime: '',
+    website: '',
   });
 
   const [contactIntent, setContactIntent] = useState<'agendar' | 'cotizar'>('agendar');
@@ -417,6 +418,21 @@ export default function QuoteModal({ isOpen, onClose, modelId }: QuoteModalProps
                       {(contactIntent === 'cotizar' || (formData.visitDate && formData.visitTime)) && (
                         <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300 border-t border-brand-gray-100 pt-6">
                           <label className="block text-sm font-semibold text-brand-gray-800 mb-2">{contactIntent === 'agendar' ? '3.' : '1.'} Tus Datos</label>
+                          
+                          {/* Honeypot Field */}
+                          <div style={{ display: 'none' }} aria-hidden="true">
+                            <label htmlFor="website3">Website</label>
+                            <input
+                              type="text"
+                              id="website3"
+                              name="website"
+                              tabIndex={-1}
+                              value={formData.website || ''}
+                              onChange={handleChange}
+                              autoComplete="off"
+                            />
+                          </div>
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input 
                               type="text" 
