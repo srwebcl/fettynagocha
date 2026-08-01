@@ -82,14 +82,16 @@ export default function HeroSlider() {
 
       {/* Contenido Hero */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full px-5 py-2 text-sm font-semibold mb-8 inline-block shadow-lg tracking-wide"
-        >
-          ☀️ Más de 10 años de experiencia
-        </motion.div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full px-5 py-2 text-sm font-semibold inline-block shadow-lg tracking-wide"
+          >
+            ☀️ Más de 10 años de experiencia
+          </motion.div>
+        </div>
         
         <motion.h1 
           className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:tracking-tighter max-w-5xl mx-auto mb-8 flex flex-col items-center gap-y-2 [perspective:none] md:[perspective:1000px]"

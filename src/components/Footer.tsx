@@ -58,7 +58,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold text-white mb-4">Contacto</h4>
             <ul className="space-y-3 text-brand-gray-400">
-              <li><span className="font-semibold text-brand-gray-200">Email:</span> contacto@fettynagocha.cl</li>
+              <li><span className="font-semibold text-brand-gray-200">Email:</span> ventas@fettynagocha.cl</li>
               <li><span className="font-semibold text-brand-gray-200">Teléfono:</span> +56 9 6878 7511</li>
               <li><span className="font-semibold text-brand-gray-200">Cobertura:</span> Coquimbo, La Serena, Vallenar</li>
             </ul>

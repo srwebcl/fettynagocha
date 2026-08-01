@@ -32,4 +32,5 @@ export interface QuoteFormData {
   message: string;
   visitDate?: string;
   visitTime?: 'mañana' | 'tarde' | '';
+  website?: string; // Honeypot field
 }

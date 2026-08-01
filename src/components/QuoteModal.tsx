@@ -18,7 +18,8 @@ const POOL_COLORS = [
   { id: 'celeste', name: 'Celeste', hex: 'linear-gradient(135deg, #93C5FD 0%, #7DD3FC 100%)' },
   { id: 'turquesa', name: 'Turquesa', hex: 'linear-gradient(135deg, #6EE7B7 0%, #2DD4BF 100%)' },
   { id: 'blanco', name: 'Blanco', hex: 'linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%)' },
-  { id: 'verde', name: 'Verde', hex: 'linear-gradient(135deg, #6EE7B7 0%, #10B981 100%)' },
+  { id: 'gris', name: 'Gris', hex: 'linear-gradient(135deg, #D1D5DB 0%, #9CA3AF 100%)' },
+  { id: 'cafe', name: 'Café', hex: 'linear-gradient(135deg, #D97706 0%, #B45309 100%)' },
 ];
 
 const COMMUNES = ['La Serena', 'Coquimbo', 'Vallenar', 'Ovalle', 'Otro'];

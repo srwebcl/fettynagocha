@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Waves, Ruler, Maximize, Users } from 'lucide-react';
+import { Waves, Ruler, Maximize, Users, ThermometerSun, Info } from 'lucide-react';
 import { POOL_MODELS } from '@/data/models';
 import dynamic from 'next/dynamic';
 import CinematicTitle from '@/components/ui/CinematicTitle';
@@ -47,7 +47,7 @@ export default function CatalogSection() {
               const cleanName = firstDigitIndex !== -1 ? model.name.substring(0, firstDigitIndex).trim() : model.name;
               const sizeSuffix = firstDigitIndex !== -1 ? model.name.substring(firstDigitIndex).trim() : '';
 
-              return (
+              const card = (
                 <motion.div 
                   key={model.id} 
                   initial={{ opacity: 0, y: 50 }}
@@ -76,11 +76,17 @@ export default function CatalogSection() {
                     <div className="absolute inset-0 p-6 flex flex-col justify-end [transform:translateZ(80px)] pointer-events-none">
                       
                       <div className="mb-5 transform transition-all duration-700 group-hover:-translate-y-3">
-                        {model.badge && (
-                          <span className="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm mb-3">
-                            {model.badge}
-                          </span>
-                        )}
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {model.badge && (
+                              <span className="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                                {model.badge}
+                              </span>
+                            )}
+                            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 backdrop-blur-md border border-orange-400/50 text-white font-bold text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                              <ThermometerSun className="w-3 h-3" />
+                              Opción Temperada
+                            </span>
+                          </div>
                         <h3 className="text-3xl font-black text-white tracking-tight drop-shadow-xl">
                           {cleanName}
                         </h3>
@@ -141,6 +147,16 @@ export default function CatalogSection() {
                   </div>
                 </motion.div>
               );
+
+              if (index === 2) {
+                return (
+                  <React.Fragment key={`card-${model.id}`}>
+                    {card}
+                  </React.Fragment>
+                );
+              }
+
+              return card;
             })}
           </div>
         </div>

@@ -23,6 +23,38 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Ribbon Promocional Inferior */}
+      <div className="fixed bottom-0 w-full z-[100] bg-brand-gray-900 text-brand-gold-light py-3 md:py-4 overflow-hidden shadow-[0_-10px_30px_rgba(0,0,0,0.3)] border-t border-brand-gold/30 flex items-center">
+        <div className="animate-marquee whitespace-nowrap flex items-center text-sm md:text-lg font-black uppercase tracking-widest min-w-full drop-shadow-lg">
+          {/* Bloque 1 */}
+          <div className="flex items-center justify-around min-w-full shrink-0 gap-12 px-6">
+            <span>PUEDES TEMPERAR 🔥 CUALQUIER MODELO DE PISCINA</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white">TEMPORADA DE INVIERNO ❄️ USA TU PISCINA TODO EL AÑO</span>
+            <span className="text-white/30">•</span>
+            <span>BOMBAS DE CALOR INVERTER ⚡ ALTA EFICIENCIA</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white">ELIGE TU PISCINA TEMPERADA 🌡️ HASTA 40°C</span>
+            <span className="text-white/30">•</span>
+            <span>EL FRÍO YA NO ES EXCUSA 📅 DISFRUTA MÁS MESES</span>
+            <span className="text-white/30">•</span>
+          </div>
+          {/* Bloque 2 (Duplicado exacto para loop perfecto) */}
+          <div className="flex items-center justify-around min-w-full shrink-0 gap-12 px-6">
+            <span>PUEDES TEMPERAR 🔥 CUALQUIER MODELO DE PISCINA</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white">TEMPORADA DE INVIERNO ❄️ USA TU PISCINA TODO EL AÑO</span>
+            <span className="text-white/30">•</span>
+            <span>BOMBAS DE CALOR INVERTER ⚡ ALTA EFICIENCIA</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white">ELIGE TU PISCINA TEMPERADA 🌡️ HASTA 40°C</span>
+            <span className="text-white/30">•</span>
+            <span>EL FRÍO YA NO ES EXCUSA 📅 DISFRUTA MÁS MESES</span>
+            <span className="text-white/30">•</span>
+          </div>
+        </div>
+      </div>
+
       <header 
         className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out ${
           isScrolled 

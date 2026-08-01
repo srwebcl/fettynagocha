@@ -33,9 +33,9 @@ export default function ContactoSection() {
     },
     {
       icon: Mail,
-      title: 'Correo Electrónico',
-      content: 'contacto@fettynagocha.cl',
-      link: 'mailto:contacto@fettynagocha.cl',
+      title: 'Correo',
+      content: 'ventas@fettynagocha.cl',
+      link: 'mailto:ventas@fettynagocha.cl',
       color: 'text-blue-400',
       bgHover: 'hover:bg-blue-400/10',
       borderHover: 'hover:border-blue-400/30'

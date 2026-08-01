@@ -25,6 +25,7 @@ export default function DesignPatioSection() {
     email: '',
     projectType: 'instalacion',
     message: '',
+    website: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -102,7 +103,7 @@ export default function DesignPatioSection() {
               <button 
                 onClick={() => {
                   setStatus('idle');
-                  setFormData({ name: '', phone: '', email: '', projectType: 'instalacion', message: '' });
+                  setFormData({ name: '', phone: '', email: '', projectType: 'instalacion', message: '', website: '' });
                 }}
                 className="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-8 rounded-full transition-all shadow-md"
               >
@@ -117,6 +118,20 @@ export default function DesignPatioSection() {
                   Ocurrió un error al enviar el mensaje. Por favor, intenta de nuevo.
                 </div>
               )}
+
+              {/* Honeypot Field - Hidden from real users */}
+              <div style={{ display: 'none' }} aria-hidden="true">
+                <label htmlFor="website2">Website</label>
+                <input
+                  type="text"
+                  id="website2"
+                  name="website"
+                  tabIndex={-1}
+                  value={formData.website || ''}
+                  onChange={handleChange}
+                  autoComplete="off"
+                />
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Nombre */}

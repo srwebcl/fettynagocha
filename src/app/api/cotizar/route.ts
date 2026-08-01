@@ -6,7 +6,24 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     
     const body = await request.json();
-    const { name, phone, email, commune, modelId, poolColor, message } = body;
+    const { name, phone, email, commune, modelId, poolColor, message, website } = body;
+
+    // 1. HONEYPOT: Si el bot llenó el campo oculto "website", descartamos silenciosamente
+    if (website) {
+      console.log('Spam bot detectado por honeypot. Descartando silenciosamente.');
+      return NextResponse.json({ success: true, message: 'Recibido' }); // Falso positivo para engañar al bot
+    }
+
+    // 2. VALIDACIÓN BÁSICA DE LONGITUD (Evitar payloads inmensos)
+    if (!name || !phone || !email) {
+      return NextResponse.json({ success: false, error: 'Faltan campos obligatorios' }, { status: 400 });
+    }
+
+    if (name.length > 100 || email.length > 150 || phone.length > 50) {
+      return NextResponse.json({ success: false, error: 'Campos exceden la longitud permitida' }, { status: 400 });
+    }
+
+    const safeMessage = message ? message.substring(0, 1000) : 'Sin mensaje adicional.';
 
     const { data, error } = await resend.emails.send({
       from: 'Fettyna Gocha Web <onboarding@resend.dev>',
@@ -23,7 +40,7 @@ export async function POST(request: Request) {
           <p><strong>Color Deseado:</strong> ${poolColor || 'No especificado'}</p>
           <div style="background-color: #F8FAFC; padding: 15px; border-radius: 6px; margin-top: 20px;">
             <p style="margin: 0;"><strong>Mensaje:</strong></p>
-            <p style="white-space: pre-wrap;">${message || 'Sin mensaje adicional.'}</p>
+            <p style="white-space: pre-wrap;">${safeMessage}</p>
           </div>
         </div>
       `,

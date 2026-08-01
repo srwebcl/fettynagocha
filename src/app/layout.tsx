@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
+import PromoWidgets from "@/components/PromoWidgets";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,7 +45,7 @@ const jsonLd = {
   "description": "Empresa dedicada a la fabricación e instalación de piscinas de fibra de vidrio en la región de Coquimbo, Chile.",
   "url": "https://fettynagocha.cl",
   "telephone": "+56968787511",
-  "email": "contacto@fettynagocha.cl",
+  "email": "ventas@fettynagocha.cl",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Ruta 5 Norte Km. 465",
@@ -89,11 +90,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans antialiased">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <PromoWidgets />
       </body>
     </html>
   );

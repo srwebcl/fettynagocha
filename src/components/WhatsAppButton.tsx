@@ -31,7 +31,7 @@ export default function WhatsAppButton({ modelName }: WhatsAppButtonProps) {
   if (!WHATSAPP_NUMBER) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center justify-center">
+    <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-[110] flex items-center justify-center">
       {/* Animación de pulso/ripple detrás del botón para llamar la atención */}
       <div className="absolute inset-0 bg-[#25D366] rounded-full animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite] opacity-60"></div>
       

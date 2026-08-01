@@ -12,6 +12,7 @@ export default function QuoteForm() {
     commune: '',
     modelId: '',
     message: '',
+    website: '',
   });
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -43,6 +44,7 @@ export default function QuoteForm() {
           commune: '',
           modelId: '',
           message: '',
+          website: '',
         });
       } else {
         setStatus('error');
@@ -80,6 +82,20 @@ export default function QuoteForm() {
           Ocurrió un error de red al enviar tu solicitud. Por favor intenta de nuevo más tarde o contáctanos por WhatsApp.
         </div>
       )}
+
+      {/* Honeypot Field - Hidden from real users */}
+      <div style={{ display: 'none' }} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          value={formData.website || ''}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
